@@ -1,5 +1,5 @@
-const Dan = require("./Dan.js");
+const Canzheng = require("./Canzheng.js");
 
-let p = new Dan("Dan", "Green");
+let p = new Canzheng("Canzheng", "Blue");
 
-console.log(p.name);
+p.speak();

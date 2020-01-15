@@ -1,11 +1,13 @@
+const Chalk = require("Chalk");
+
 class Person {
-    constructor(name, color) {
+    constructor(name, favoriteColor) {
         this.name = name;
-        this.color = color;
+        this.favoriteColor = favoriteColor.toLowerCase();
     }
 
     speak() {
-        console.log("Hi!");
+        console.log(Chalk.keyword(this.favoriteColor)(this.name));
     }
 }
 
