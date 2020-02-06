@@ -10,7 +10,7 @@ App.get("/id/:id", (req, res) => {
     let result = getPokemons.getPokemonById(parseInt(req.params.id));
 
     if (result === null) {
-        res.send("<p>Woop, Not Find!</p>");
+        res.send("<p style=\"color:red;\">Woop, Not Find!</p>");
         console.log(chalk.red(req.path));
     } else {
         
@@ -24,7 +24,7 @@ App.get("/name/:name", (req, res) => {
     let result = getPokemons.getPokemonByName(req.params.name);
 
     if (result === null) {
-        res.send("<p>Woop, Not Find!</p>");
+        res.send("<p style=\"color:red;\">Woop, Not Find!</p>");
         console.log(chalk.red(req.path));
 
     } else {
