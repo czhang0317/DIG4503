@@ -4,7 +4,7 @@ const App = Express();
 const port = 80;
 const getPokemons = require("json-pokemon/getPokemon");
 
-
+App.use("/", Express.static("public"));
 
 App.get("/id/:id", (req, res) => {
     let result = getPokemons.getPokemonById(parseInt(req.params.id));
@@ -32,6 +32,8 @@ App.get("/name/:name", (req, res) => {
         console.log(chalk.green(req.path));
         
     }
+
+    res.json(result)
 });
 
 

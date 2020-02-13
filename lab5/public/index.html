@@ -1,0 +1,57 @@
+<html>
+    <body>
+        <script>
+            function FindId(event) {
+
+                event.preventDefault();
+
+                let element = document.querySelector("#pokemonId");
+               
+
+                fetch("/id/" + element.value).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    
+                    let reporting = document.querySelector("#reportingArea");
+
+                    if(processed.error) {
+                        reporting.innerHTML = document.getElementById("pokemonId").value + " is " + processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+
+                });
+            }
+
+            function FindName(event) {
+
+                event.preventDefault();
+
+                let element = document.querySelector("#pokemonName");
+
+                fetch("/name/" + element.value).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    
+                    let reporting = document.querySelector("#reportingArea");
+
+                    if(processed.error) {
+                        reporting.innerHTML = document.getElementById("pokemonName").value + " is " + processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+
+                });
+            }
+        </script>
+        <form onsubmit="FindId(event)">
+            <input id="pokemonId" type="text">
+            <button>Submit</button>
+        </form>
+        <form onsubmit="FindName(event)">
+                <input id="pokemonName" type="text">
+                <button>Submit</button>
+        </form>
+        <div id="reportingArea"></div>
+    </body>
+</html>
