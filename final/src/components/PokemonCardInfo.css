@@ -1,0 +1,37 @@
+
+  
+.card-info {
+  display: flex;
+  flex-direction: column;
+  
+  }
+
+  .card-info-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid 2px gray;
+    margin-bottom: 20px;
+
+}
+
+#hp {
+  max-height: none;
+  margin: 35px 0 0 0;
+}
+
+#attacks {
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+#abilities-header {
+  margin-top: 1em;
+}
+
+#costs {
+  display: flex;
+
+}
